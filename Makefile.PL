@@ -26,9 +26,11 @@ resources repository => 'http://github.com/ashb/trycatch/tree/master';
 
 auto_provides;
 
-configure_requires 'ExtUtils::Depends';
-configure_requires 'B::Hooks::OP::Check' => 0.15;
-configure_requires 'B::Hooks::OP::PPAddr' => 0.02;
+configure_requires 'ExtUtils::Depends' => 0.302; #minimum version that works on Win32+gcc
+configure_requires 'B::Hooks::OP::Check' => '0.18';
+#minimum version that depends on ExtUtils::Depends 0.302
+configure_requires 'B::Hooks::OP::PPAddr' => 0.03;
+#minimum version that depends on ExtUtils::Depends 0.302
 my $ok = 1;
 
 # Does the toolchain support configure_requires
